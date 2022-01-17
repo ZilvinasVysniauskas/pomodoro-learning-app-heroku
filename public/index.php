@@ -15,3 +15,4 @@ catch (PDOException $e) {
         $e->getFile() . ':' . $e->getLine();
     include  __DIR__ . '/../templates/layout.html.php';
 }
+tr
