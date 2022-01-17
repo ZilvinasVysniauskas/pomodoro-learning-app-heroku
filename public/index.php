@@ -3,7 +3,8 @@ try {
     include __DIR__ . '/../includes/autoload.php';
 
     $route = ltrim(strtok($_SERVER['REQUEST_URI'], '?'), '/');
-    echo 'testing';
+    echo '<script>console.log(' . $route .')</script>';
+
 
     $entryPoint = new \Ninja\EntryPoint($route, $_SERVER['REQUEST_METHOD'], new \Pomodoro\PomodoroRoutes());
     $entryPoint->run();
