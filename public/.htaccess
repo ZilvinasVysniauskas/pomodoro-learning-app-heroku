@@ -1,41 +1,9 @@
-# Do not allow access to the root filesystem.
-<Directory />
-    Options FollowSymLinks
-    AllowOverride None
-    Require all denied
-</Directory>
-
-# Prevent .htaccess and .htpasswd files from being viewed by Web clients.
-<FilesMatch "^\.ht">
-    Require all denied
-</FilesMatch>
-<Directory /var/www/>
-    Options Indexes FollowSymLinks
-    AllowOverride None
-    Require all granted
-</Directory>
-
-ServerName https://trying-to-make-shit-work.herokuapp.com/
-DocumentRoot ""
-
-<Directory "">
-    Require all granted
-
-    # When Options is set to "off", then the RewriteRule directive is forbidden!
-    Options FollowSymLinks
-
-    # Activate rewriting engine.
+<IfModule mod_rewrite.c>
+    Options +FollowSymLinks
     RewriteEngine On
 
-    # Allow pin-pointing to index.php using RewriteRule.
-    RewriteBase /
-
-    # Rewrite url only if no physical folder name is given in url.
-    RewriteCond %{REQUEST_FILENAME} !-d
-
-    # Rewrite url only if no physical file name is given in url.
-    RewriteCond %{REQUEST_FILENAME} !-f
-
-    # Parse the request through index.php.
-    RewriteRule ^(.*)$ index.php [QSA,L]
-</Directory>
+    RewriteCond %{REQUEST_URI} !-f
+    RewriteCond %{REQUEST_URI} !-d
+    RewriteCond %{REQUEST_URI} !-l
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>
