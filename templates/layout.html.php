@@ -27,7 +27,7 @@ if ($title !== 'pomodoro'){
 
 <style>
     <?php
-        include __DIR__ . "/../style/styles.css.php";
+        include __DIR__ . "/../style/style.css.php";
     ?>
 </style>
 
