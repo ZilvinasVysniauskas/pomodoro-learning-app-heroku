@@ -101,7 +101,7 @@ class loginController
                     $stmt2 = $pdo->prepare($sql2);
                     $stmt1->execute();
                     $stmt2->execute();
-                    header('location: http://localhost:8000/');
+                    header('location: https://trying-to-make-shit-work.herokuapp.com/');
                 }
             }
         }
