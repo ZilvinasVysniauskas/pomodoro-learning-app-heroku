@@ -292,13 +292,14 @@ $(document).ready(function (){
         $.post("/ajax/updateAjax.php", {
             taskToAdd: taskToAdd
         });
+        $('#tasksFromDb').load('/ajax/loadTasksFromDbAjax.php');
         document.getElementById('addTaskForm').style.display = 'none';
         document.getElementById('userTaskInput').value = '';
     });
 });
-$(document).ready(function (){
-    $('#saveNewTask').click(function (){
-        $('#tasksFromDb').load('/ajax/loadTasksFromDbAjax.php');
-    })
-})
+//$(document).ready(function (){
+//    $('#saveNewTask').click(function (){
+//        $('#tasksFromDb').load('/ajax/loadTasksFromDbAjax.php');
+//    })
+//})
 
