@@ -96,7 +96,7 @@ class loginController
 
                     include __DIR__ . '/../../../includes/DatabaseConnection.php';
                     $sql1 = "CREATE TABLE " . $userStatisticsTable .  " (`task` VARCHAR(45) NOT NULL,`time` INT NOT NULL,`date` DATE NOT NULL,PRIMARY KEY (`task`));";
-                    $sql2 = "CREATE TABLE " . $userTasksTable .  " (`task` VARCHAR(45), `goal_time` int, goal_deadline date,  PRIMARY KEY (`task`));";
+                    $sql2 = "CREATE TABLE " . $userTasksTable .  " (`task` VARCHAR(45), `goal_time` int, goal_deadline date, is_goal_set,  PRIMARY KEY (`task`));";
                     $stmt1 = $pdo->prepare($sql1);
                     $stmt2 = $pdo->prepare($sql2);
                     $stmt1->execute();
