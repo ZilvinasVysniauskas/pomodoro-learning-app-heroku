@@ -16,7 +16,7 @@
 </Directory>
 
 ServerName https://trying-to-make-shit-work.herokuapp.com/
-DocumentRoot "/public"
+DocumentRoot ""
 
 <Directory "">
     Require all granted
