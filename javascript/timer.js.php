@@ -292,7 +292,8 @@ $(document).ready(function (){
         $.post("/ajax/updateAjax.php", {
             taskToAdd: taskToAdd
         });
-        $('#tasksFromDb').load('/ajax/loadTasksFromDbAjax.php');
+        setTimeout(function(){$('#tasksFromDb').load('/ajax/loadTasksFromDbAjax.php')}, 5000);
+
         document.getElementById('addTaskForm').style.display = 'none';
         document.getElementById('userTaskInput').value = '';
     });
