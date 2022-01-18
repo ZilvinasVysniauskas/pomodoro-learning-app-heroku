@@ -23,7 +23,8 @@ class Authentication
     }
     public function logout(){
         session_destroy();
-        header('location: http://localhost:8000/');
+        $actual_link = 'http://'.$_SERVER['HTTP_HOST'];
+        header('location: '. $actual_link);
     }
     public function isLogged(){
         if (!isset($_SESSION['username'])){
