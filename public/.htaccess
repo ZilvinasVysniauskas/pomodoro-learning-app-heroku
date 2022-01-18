@@ -15,10 +15,10 @@
     Require all granted
 </Directory>
 
-ServerName www.my-sample-mvc.com
-DocumentRoot "/path/to/my/sample/mvc/public"
+ServerName https://trying-to-make-shit-work.herokuapp.com/
+DocumentRoot "/public"
 
-<Directory "/public">
+<Directory "">
     Require all granted
 
     # When Options is set to "off", then the RewriteRule directive is forbidden!
