@@ -101,7 +101,8 @@ class loginController
                     $stmt2 = $pdo->prepare($sql2);
                     $stmt1->execute();
                     $stmt2->execute();
-                    header('location: https://trying-to-make-shit-work.herokuapp.com/');
+                    $actual_link = 'http://'.$_SERVER['HTTP_HOST'];
+                    header('location: '. $actual_link);
                 }
             }
         }
