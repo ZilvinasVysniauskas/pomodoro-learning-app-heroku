@@ -11,4 +11,7 @@ foreach ($tasksAjax as $task){
     echo $line;
 }
 echo '</select>';
+
+$actual_link = 'http://'.$_SERVER['HTTP_HOST'];
+header('location: '. $actual_link);
 ?>

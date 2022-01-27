@@ -15,5 +15,6 @@ if ($tas = 'allTasks'){
 else{
     echo 'Time spent on '. $task .':'. $mainPagesController->getTimeSpentFormDateOneToDateTwo($dateStart, $dateEnd, $task);
 }
-
+$actual_link = 'http://'.$_SERVER['HTTP_HOST'];
+header('location: '. $actual_link);
 //TODO use DateInterval

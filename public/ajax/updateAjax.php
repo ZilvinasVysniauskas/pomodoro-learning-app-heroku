@@ -52,3 +52,5 @@ if(!empty(($_POST['taskToAdd']))){
     $data = ['task' => $taskToAdd, 'is_goal_set' => 0];
     $userTasksTable->insertIntoDb($data);
 }
+$actual_link = 'http://'.$_SERVER['HTTP_HOST'];
+header('location: '. $actual_link);
